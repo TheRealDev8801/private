@@ -412,6 +412,63 @@ a {
   line-height: 1.75;
 }
 
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.stat-box {
+  padding: 26px 18px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+  text-align: center;
+}
+
+.stat-box strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: clamp(1.7rem, 2vw, 2.5rem);
+  letter-spacing: -0.06em;
+}
+
+.stat-box span {
+  color: var(--muted);
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.step-card {
+  padding: 26px 22px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.step-number {
+  display: inline-block;
+  color: var(--primary-3);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.step-card h3 {
+  margin: 0 0 12px;
+  font-size: 1.5rem;
+}
+
+.step-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
 .commands {
   background: rgba(8, 13, 22, 0.66);
   border-top: 1px solid rgba(255,255,255,0.04);
@@ -499,6 +556,68 @@ a {
   color: var(--muted);
 }
 
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.review-card {
+  padding: 24px 22px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.review-card p {
+  margin: 0 0 18px;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.review-author {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.review-author strong {
+  letter-spacing: -0.03em;
+}
+
+.review-author span {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.faq-list {
+  display: grid;
+  gap: 16px;
+}
+
+.faq-list details {
+  padding: 18px 20px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+}
+
+.faq-list summary {
+  cursor: pointer;
+  font-weight: 700;
+  list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-list p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
 .cta-card {
   display: flex;
   align-items: center;
@@ -506,8 +625,8 @@ a {
   gap: 18px;
   padding: 30px 28px;
   border-radius: 24px;
-  background: linear-gradient(135deg, rgba(124, 92, 255, 0.18), rgba(62, 199, 255, 0.12));
-  border: 1px solid rgba(124, 92, 255, 0.18);
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.2), rgba(62, 199, 255, 0.14));
+  border: 1px solid rgba(124, 92, 255, 0.2);
   box-shadow: var(--shadow);
 }
 
@@ -571,6 +690,10 @@ a {
   transition-delay: 0.16s;
 }
 
+.delay-3 {
+  transition-delay: 0.24s;
+}
+
 @media (max-width: 900px) {
   .nav {
     flex-wrap: wrap;
@@ -581,19 +704,14 @@ a {
   .hero,
   .about,
   .cta-card {
+    display: grid;
     grid-template-columns: 1fr;
   }
 
-  .hero,
-  .about {
-    display: grid;
-  }
-
-  .cta-card {
-    display: grid;
-  }
-
-  .feature-grid {
+  .feature-grid,
+  .steps-grid,
+  .review-grid,
+  .stats-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -615,15 +733,15 @@ a {
   }
 
   .feature-grid,
+  .steps-grid,
+  .review-grid,
+  .stats-strip,
   .about-metrics {
     grid-template-columns: 1fr;
   }
 
-  .command-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
+  .command-row,
+  .cta-card,
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
